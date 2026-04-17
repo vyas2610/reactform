@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Button } from '@mui/material'
 
 const Form = () => {
+const [uname,setUname] = useState("");
+const [upass,setUpass] = useState("");
+
+    const HandleSubmit =(e) => {
+        
+        e.preventDefault();
+        console.log(uname);
+        console.log(upass);
+
+    }
   return (
     <div>
+        <form onSubmit={HandleSubmit}>
         <p>
-            <input type='text' name='uname' id='uname' />
+            <input type='text' name='uname' id='uname' value={uname} onChange={(e)=> {setUname(e.target.value)}}/>
         </p>
 
         <p>
-            <input type='password' name='upass' id='upass' />
+            <input type='password' name='upass' id='upass'value={upass} onChange={(e)=> {setUpass(e.target.value)}}/>
         </p>
 
         <p>
-            <button type='submit'>Login</button>
+            <button  type="submit">Login</button>
         </p>
+    </form>
     </div>
   )
 }
