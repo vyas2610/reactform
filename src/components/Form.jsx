@@ -8,9 +8,12 @@ const [upass,setUpass] = useState("");
     const HandleSubmit =(e) => {
         
         e.preventDefault();
-        console.log(uname);
-        console.log(upass);
+        const data =[{
+            name : uname,
+            pass : upass
+        }]
 
+        console.log(data);
     }
   return (
     <div>
@@ -26,7 +29,9 @@ const [upass,setUpass] = useState("");
         <p>
             <button  type="submit">Login</button>
         </p>
+        
     </form>
+
     </div>
   )
 }
